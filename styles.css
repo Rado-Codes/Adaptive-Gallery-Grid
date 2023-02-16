@@ -1,0 +1,271 @@
+
+
+body{
+    margin:0;
+    padding: 0;
+    background-image: linear-gradient(60deg, #fafafa, rgb(178, 230, 173), #fafafa, rgb(178, 230, 173), rgb(255, 255, 255) )
+}
+
+.gallery-button {
+    margin-left:0vw;
+    margin-top: 1vh;
+    padding: 10px;
+    width: 98vw;  
+    position: fixed;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(5px);
+    background: rgba(68, 68, 68, 0.2);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    
+}
+
+/* .gallery-button:hover {
+    width: 100vw;
+} */
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) ;
+    /* grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr; */
+    grid-template-rows: 1fr;
+    
+    /* row-gap: 5px; */
+    grid-gap: 2px;
+}
+
+
+
+    
+
+
+li {
+    /* opacity: 0.5; */
+    grid-column: span 1;
+    height: 40vh;
+    /* margin: 5px; */
+    /* padding: 1px; */
+    /* border: 1.5px dotted grey;
+    border-radius: 5px 50px; */
+}
+
+li:nth-child(12n+1),
+li:nth-child(12n+3),
+li:nth-child(12n+5),
+li:nth-child(12n+8),
+li:nth-child(12n+10),
+li:nth-child(12n+12){
+  grid-column: span 2;
+  
+}
+
+
+/* li:nth-child(7n+1),
+li:nth-child(7n+2),
+li:nth-child(7n+3)
+ {
+  grid-column: span 2;
+} */
+
+/* li:nth-child(1n), 
+li:nth-child(3n), 
+li:nth-child(5n) {
+    grid-column: span 1;
+}
+
+li:nth-child(2n), 
+li:nth-child(4n), 
+li:nth-child(6n) {
+    grid-column: span 2;
+} */
+
+/* li:nth-child(7n), 
+li:nth-child(9n), 
+li:nth-child(11n) {
+  grid-column: span 2;
+}
+
+li:nth-child(8n), 
+li:nth-child(10n), 
+li:nth-child(12n) {
+  grid-column: span 1;
+} */
+
+
+
+
+li:hover {
+    /* height: 45vh; */
+}
+
+/* li:last-child {
+    flex-grow: 10;
+    height: 40vh;
+    width: 25vh;
+} */
+
+/* .item {
+    object-fit: cover;
+} */
+
+/* .test-item {
+    width: 20vw;
+    height: 40vh;
+    background: red;
+} */
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    vertical-align: bottom;
+   
+}
+
+img:hover {
+    /* opacity: 0.5; */
+    /* border: solid 10px white; */
+    
+}
+
+
+
+/* // DIFFERENT SIZES */
+
+
+
+@media (max-width: 1200px) {
+
+    ul {
+      grid-template-columns: repeat(6, 1fr);
+      
+    }
+  
+    li {
+        height: 45vh;
+        grid-column: span 1;
+      
+    }
+    li:nth-child(1n){
+        grid-column: span 1;
+    }
+
+    li:nth-child(8n+1),
+    li:nth-child(8n+3),
+    li:nth-child(8n+6),
+    li:nth-child(8n+8){
+        grid-column: span 2;
+   
+    }
+    .gallery-button{
+      width: 100vw;
+    }
+}
+
+@media (max-width: 800px) {
+
+    ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    li {
+        height: 45vh;
+        grid-column: span 1;
+    }
+
+    li:nth-child(1n){
+      grid-column: span 1;
+    } 
+
+    li:nth-child(4n+1),
+    li:nth-child(4n+4){
+        grid-column: span 2;
+   
+    }
+    .gallery-button{
+      width: 100vw;
+    }
+}
+
+@media (max-width: 480px) {
+  ul {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  li {
+    height: 100vh;
+    flex-grow: 1;
+    
+}
+}
+
+
+
+/* // BASIC
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+li:last-child {
+  // There's no science in using "10" here. In all my testing, this delivered the best results.
+  flex-grow: 10;
+}
+
+img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+// ADVANCED
+
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+  li {
+    height: 30vh;
+  }
+}
+
+// Short screens
+
+@media (max-height: 480px) {
+  li {
+    height: 80vh;
+  }
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  ul {
+    flex-direction: row;
+  }
+
+  li {
+    height: auto;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+} */
